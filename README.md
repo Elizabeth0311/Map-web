@@ -8,7 +8,7 @@
 
 ### Code 구성
 
-'''
+```
 < PROJECT ROOT >
  
    |-- templates    
