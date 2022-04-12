@@ -1,12 +1,16 @@
 from flask import Flask
 from flask.templating import render_template
 
-app = Flask(__name__)
+app = Flask(__name__,static_url_path='/static')
 
 
 @app.route("/main")
-def first_page():
+def main_page():
     return render_template('main_map.html')
+
+@app.route("/login")
+def login_page():
+    return render_template('login.html')
 
 
 
