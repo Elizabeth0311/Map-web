@@ -7,7 +7,11 @@
 
 ```
 < PROJECT ROOT >
- 
+   
+   |-- db_moodel
+   |-- map_control
+   |-- map_view
+   |-- static 
    |-- templates    
    |     |-- main.html          # main 페이지 
    
