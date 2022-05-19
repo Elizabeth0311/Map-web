@@ -31,7 +31,7 @@
    |     |-- login.html
    |     |-- map.html  
    |     |-- map_in.html
-   |-- map_app.py            # 서버 실행파일 
+   |-- map_app.py            # flask 실행파일 
 
 ```
 ----
