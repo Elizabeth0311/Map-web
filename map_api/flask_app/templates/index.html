@@ -19,19 +19,20 @@
     
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand">로그인 후 이용해주세요 :)</a>
+        <a class="navbar-brand">회원가입 후 이용해주세요! </a>
 
         <!--로그인 -->
-        <form class="d-flex" action="/index/map" method="POST" > <!--페이지 전환 -->
+        <form class="d-flex" action="/map/login" method="POST" > <!--페이지 전환 -->
           <input type="text" class="form-control me-2"  placeholder="아이디" name="web_id">
-          <input class="form-control me-2"  placeholder="비밀번호" name="user_pw"> 
+          <input type="password" class="form-control me-2"  placeholder="비밀번호" name="user_pw"> 
           <button class="btn btn-outline-success" type="submit">login</button>
         </form>
       </div>
     </nav>
   </div>
+
   <!--회원가입 --> 
-  <form action="/index/map" method="POST"> <!--페이지전환-->
+  <form action="/map/signup" method="POST"> <!--페이지전환-->
     <div class="container">
       <div class="row justify-content-center align-items-center" style="height:100vh">
           <div class="col-4">
@@ -42,6 +43,7 @@
                           <div class="form-group">
                             <h1 class="h6 mb-3 fw-normal"> 사용하실 아이디와 비밀번호를 입력해주세요. </h1>
                               <input type="text" placeholder="아이디" class="form-control" name="web_id">
+                              <input type="hidden" name="map_id" value="A">
                           </div>
                         </br>
                         <br>

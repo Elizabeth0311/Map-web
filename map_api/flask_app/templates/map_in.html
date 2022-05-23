@@ -14,23 +14,25 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-	<title>경로를 입력해주세요</title>
+	<title>경로 검색</title>
 </head>
 <body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-          <a class="navbar-brand"> 안녕하세요:) </a>
+          <a class="navbar-brand"> 경로를 입력해주세요 :) </a>
+           <!--회원가입 후 나타나는 페이지-->
+           
           {% if web_id != null %}
-          {{ web_id}}님 안녕하세요! 
+          {{ web_id}}님 안녕하세요!&nbsp;
           {% else %}
-          등록 후 이용해주세요! &nbsp;
+          사용자 등록 후 이용해주세요 :)
           <form class="d-flex" action="/map/in_user" method="POST" > 
+          
             <input type="text" class="form-control me-2"  placeholder="아이디" name="web_id"> 
-            <input type="hidden" name="map_id" value="B" >
             <input type="password" class="form-control me-2"  placeholder="비밀번호" name="user_pw">
-            <button class="btn btn-outline-success" type="submit">등록</button>
+            <button class="btn btn-outline-success" type="submit">signin</button>
           </form>
-          {% endif %}
+            {% endif %}
         </div>
       </nav>
 <br>
