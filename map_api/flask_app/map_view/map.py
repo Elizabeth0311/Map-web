@@ -6,7 +6,7 @@ from flask_login import login_user, current_user
 map_bp = Blueprint('map',__name__)
 
 # 메인화면 
-@map_bp.route("/in_user",methods=['GET','POST'])  
+@map_bp.route("/",methods=['GET','POST'])  
 def in_user():
     if request.method == "GET" :
         # print(request.args.get("web_id")

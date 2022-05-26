@@ -10,8 +10,7 @@ from map_control.user_mgmt import User
 # https만 지원하는 기능을 http에서 테스트 할 때 필요한 설정
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = "1"
 
-# EB 배포를 위한 객체명
-application = app = Flask(__name__,static_url_path='/static')  #html 가져오는 경로 지정
+app = Flask(__name__,static_url_path='/static')  
 
 CORS(app)
 
@@ -36,10 +35,11 @@ def unauthorized() :                   # 로그인이 안된 사용자가 로그
     return make_response(jsonify(success=False), 401)
 
 
-if __name__ == "__main__":              
-    app.run(host="0.0.0.0", port="8080")
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8080))  
+    app.run(host="0.0.0.0" , port=port)
     
     # EB 설정 
-    application.debug = True  # 디버그설정은 자유롭게 가능
-    application.run()         # 옵션 비워두기 (추천)
+    # application.debug = True  # 디버그설정은 자유롭게 가능
+    # application.run()         # 옵션 비워두기 (추천)
 
