@@ -8,6 +8,11 @@ MYSQL_CONN = pymysql.connect(
         passwd='moonhr',
         db='map_db',
         charset='utf8'   # 한글깨짐방지
+        # host="us-cdbr-east-05.cleardb.net",
+        # user='b889693190c502',   
+        # passwd='12c0e0f5',
+        # db='heroku_db',
+     
 )
 
 

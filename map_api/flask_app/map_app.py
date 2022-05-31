@@ -5,20 +5,24 @@ from map_view import map
 from flask_cors import CORS
 from map_control.user_mgmt import User
 
-
+ 
 
 # https만 지원하는 기능을 http에서 테스트 할 때 필요한 설정
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = "1"
 
-app = Flask(__name__,static_url_path='/static')  
+    
+app = Flask(__name__,static_url_path='/static') # static_url_path='/static'
 
 CORS(app)
+
+app.secret_key = 'hyeri_server1' 
+
+app.register_blueprint(map.map_bp, url_prefix = '/map') 
+
 
 # 서버 보안  # 랜덤설정시 session 리셋됨
 app.secret_key = 'hyeri_server'  
 
-# map_view/map.py 안에 Blueprint 객체 등록
-app.register_blueprint(map.map_bp, url_prefix='/map')  
 
 # flask 로그인매니져
 login_manager = LoginManager()
@@ -36,8 +40,8 @@ def unauthorized() :                   # 로그인이 안된 사용자가 로그
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 8080))  
-    app.run(host="0.0.0.0" , port=port)
+
+    app.run(host='0.0.0.0', port= '8080', debug=True) 
     
     # EB 설정 
     # application.debug = True  # 디버그설정은 자유롭게 가능

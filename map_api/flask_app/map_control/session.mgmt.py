@@ -3,7 +3,7 @@ from db_model.mongodb import conn_mongodb
 from datetime import datetime
 
 class MapSession() :
-    map_page = {"A" : "map", "B" : "map_in.html"}
+    map_page = {"A" : "map_A", "B" : "map_B.html"}
     session_count = 0
     
     @staticmethod
@@ -25,7 +25,7 @@ class MapSession() :
         if map_id == None :
             if MapSession.session_count == 0 :
                 MapSession.session_count = 1
-                return 'map.html'
+                return 'map_A.html'
         else :
             return MapSession.map_page[map_id]
             

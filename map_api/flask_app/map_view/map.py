@@ -1,33 +1,35 @@
 from flask import Blueprint, redirect, request , render_template, url_for, session
-from map_control.user_mgmt import User
 from flask_login import login_user, current_user
+from map_control.user_mgmt import User
 
 
 map_bp = Blueprint('map',__name__)
 
 # 메인화면 
-@map_bp.route("/",methods=['GET','POST'])  
-def in_user():
+@map_bp.route("/index",methods=['GET','POST'])  #http://127.0.0.1:8080/map
+def index():
     if request.method == "GET" :
-        # print(request.args.get("web_id")
-        return redirect(url_for('map.map_in'))    # "http://127.0.0.1:8080 접속시 나오는 화면"
+        # print(request.args.get("web_id")  
+        return redirect(url_for('map.in_user'))
     else  :
-        # print(request.form['web_id'])
+        # print('web_id', request.form['web_id'])
         # print('0', request.headers)
-        session.permanent = True           
-        user = User.create(request.form["web_id"],request.form["user_pw"], "A")  
-        # login_user(user,force = True)
+        # session.permanent = True           
+        user = User.create(request.form["web_id"], "A") 
+        login_user(user)
         
-        return redirect(url_for('map.map_in'))
-           
-        
-# 사용자 등록 후 
-@map_bp.route("/map_in")
-def map_in() :
-    if current_user.is_authenticated :
-        return render_template("map.html", web_id = current_user.web_id)
+        return redirect(url_for('map.in_user'))
+
+
+# 들어가는 페이지
+@map_bp.route("/in_user")
+def in_user() :
+    if current_user.is_authenticated : # 사용자 등록 확인, map_app/user_loader 함수 호출
+        return render_template("map_A.html", web_id = current_user.web_id)
     else : 
-        return render_template("map.html")
+        return render_template("map_A.html")  # 한번도 등록된 사용자가 없으면
+    
+
 
 
 
