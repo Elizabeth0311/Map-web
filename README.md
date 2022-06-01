@@ -17,33 +17,40 @@
 ```
 < PROJECT ROOT >
    
-   |-- db_moodel             # DB 연결, 사용자 정보 저장
-        |-- mysql.py
-        |-- mongodb.py
-   |-- map_control           # 세션 및 쿠키 관리
-        |-- session_mgmt.py
-        |-- user_mgmt.py
-   |-- map_view              # 라우팅 경로 지정 
-        map.py
-   |-- static 
-   |-- templates              # 웹 화면 구성
-   |     |-- index.html
-   |     |-- login.html
-   |     |-- map.html  
-   |     |-- map_in.html
-   |-- map_app.py            # flask 실행파일 
+.
+└── flask_app/
+    ├── db_model/                # DB 연결
+    │   ├── mysql.py  
+    │   └── monggodb.py
+    │
+    ├── map_control/             # DB에 데이터 삽입
+    │   ├── session_mgmt.py      # 세션 관리 
+    │   └── user_mgmt.py         # 사용자 정보 관리
+    │
+    ├── map_view/                # 라우팅 경로 정의 
+    │   └── map.py
+    │
+    ├── static/                  # 부트스트랩 관련 파일
+    │   ├── brand
+    │   ├── dist
+    │   └── blog.css
+    │
+    ├── templates/               # 템플릿 폴더
+    │   ├── map_A.html           # 웹 화면
+    │   └── map_B.html
+    └── map_app.py               # flask 앱 실행 파일 
 
 ```
 ----
-### Tools 
+### stack 
 - 언어 : Python
 - Web framework : Flask 
-- DB : MySQL
+- DB : MySQL 
 - 배포 : Heroku 
 
 ------
 ### 개발 내용 
-Flask를 활용하여 MVC 패턴으로  화면구성과 백엔드 설계
+Flask를 활용하여 웹 화면과 백엔드 설계
 
 1. 사용자 등록 후 목적지를 검색 할 수 있게 했다.  
 2. 검색어 입력 후 지도위에 마커가 표시된다.
@@ -57,13 +64,6 @@ Flask를 활용하여 MVC 패턴으로  화면구성과 백엔드 설계
 
 -----
 ### 서비스 화면 
-<img src = "https://user-images.githubusercontent.com/64198864/169943147-409c812c-f7e5-48de-b8f8-6b0770026a2d.png" width="500" height="300" >
+<img src = "https://user-images.githubusercontent.com/64198864/171449910-81459e78-2ea0-4238-a29a-3f990e77cff1.png" width="500" height="300" >
 
-----
-### 회고 
-* 웹 서비스에 대한 이해
-   - 서버와 클라이언트, API, http method, CRUD, 디자인패턴  
-* 처음 프론트엔드를 구현하고 나서 백엔드와의 연결에서 문제가 있었다. 
-   - 어떤 변수에 어떤 값을 넣어야 할지 생각했고 플라스크의 작동 원리를 찾아보고 어느정도 해결이 되었다. 
-   - 이후 mysql에 사용자 정보(아이디, 비밀번호)를 넣는 데 많은 시간이 걸렸다. 
 
