@@ -65,6 +65,8 @@ Flask를 활용하여 웹 화면과 백엔드 설계
 
 -----
 ### 서비스  
+:point_right: [서비스 화면 바로가기](https://on-the-road.herokuapp.com/)
+
 <img src = "https://user-images.githubusercontent.com/64198864/171449910-81459e78-2ea0-4238-a29a-3f990e77cff1.png" width="500" height="300" >
 
 
