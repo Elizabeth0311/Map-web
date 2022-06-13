@@ -8,7 +8,7 @@ def create_app() :
     #     return render_template('map.html')
     
     from flask_app.views import main_view
-    app.register_blueprint(main_view.bp)
+    app.register_blueprint(main_view.map_bp)
     
     return app
 
