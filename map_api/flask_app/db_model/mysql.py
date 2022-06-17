@@ -4,13 +4,13 @@ MYSQL_HOST = 'localhost'
 MYSQL_CONN = pymysql.connect( 
         host=MYSQL_HOST,
         port=3306,
-        user='hyeri',   
-        passwd='moonhr',
+        user='**',   
+        passwd='**',
         db='map_db',
         charset='utf8'   # 한글깨짐방지
         # host="us-cdbr-east-05.cleardb.net",
-        # user='b889693190c502',   
-        # passwd='12c0e0f5',
+        # user='**',   
+        # passwd='**',
         # db='heroku_db',
      
 )
