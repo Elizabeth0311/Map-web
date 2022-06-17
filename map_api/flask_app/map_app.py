@@ -15,13 +15,13 @@ app = Flask(__name__,static_url_path='/static') # static_url_path='/static'
 
 CORS(app)
 
-app.secret_key = 'hyeri_server1' 
+app.secret_key = '**' 
 
 app.register_blueprint(map.map_bp, url_prefix = '/map') 
 
 
 # 서버 보안  # 랜덤설정시 session 리셋됨
-app.secret_key = 'hyeri_server'  
+app.secret_key = '**'  
 
 
 # flask 로그인매니져
